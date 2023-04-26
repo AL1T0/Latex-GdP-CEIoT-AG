@@ -131,7 +131,7 @@
 
 \lhead{\includegraphics[width=3.5cm]{./Figuras/logoFIUBA.pdf}}
 \chead{}
-\rhead{\normalsize \textrm{Plan de proyecto de Trabajo final \\\degreename\\ \authorname}}
+\rhead{\normalsize \textrm{Plan de proyecto de Trabajo Final \\\degreename\\ \authorname}}
 \lfoot{ }
 \cfoot{\normalsize Página \thepage \hspace{1px} de \pageref{LastPage}}
 \rfoot{}
@@ -208,7 +208,7 @@
 	
     \vfill
     \centering
-    \textit{Esta planificación fue realizada en el curso de Gestión de proyectos\\ entre el \fechaInicioName \hspace{1px} y el  \fechaFinalPlanName.}
+    \textit{Esta planificación fue realizada en el curso de Gestión de Proyectos\\ entre el \fechaInicioName \hspace{1px} y el  \fechaFinalPlanName.}
 		
 	\pagebreak
   }
