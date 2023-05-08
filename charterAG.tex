@@ -68,8 +68,8 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+0      & Creación del documento y asignación del director      &\fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & 8 de mayo de 2023 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{1cm}
 
-Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', y consistirá en el desarrollo de un prototipo para un sistema capaz de monitorear a distancia los equipos de captura de CO$_2$ pertenecientes al emprendimiento Green Backbone, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública en \fechaFinalName.
+Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el desarrollo de un prototipo para un sistema capaz de monitorear a distancia los equipos de captura de CO$_2$ pertenecientes al proyecto \textit{Green Backbone}, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública en \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -102,7 +102,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ Fundador de \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ Fundador de \textit{\empclientename} \end{tabular} \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
@@ -114,64 +114,53 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
-\begin{consigna}{black} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
 El presente trabajo forma parte de la iniciativa de sostenibilidad \textit{Green Backbone} (en adelante GB) cuyo objetivo es hacer frente a los efectos de la emisión de gases de efecto invernadero (GEI) y descarbonizar el aire que respiramos. 
 
 La emisión de GEI que se produce en actividades humanas, tales como la quema de hidrocarburos y la industrialización, se asocia con el cambio climático y tiene efectos significativos en los sistemas naturales y humanos en todo el mundo, por ejemplo, el aumento del nivel del mar, el derretimiento de glaciares y la alteración de los patrones climáticos. Estos efectos a su vez pueden tener un impacto importante en la seguridad alimentaria, en la disponibilidad de agua y en la salud humana. 
 
-Para hacer frente a esta problemática algunos actores del mundo (países, compañías e instituciones) acordaron reducir paulatinamente la emisión de los GEI hacia el año 2030 y llegar al año 2050 con emisión cero (\textit{net zero}). Sin embargo, los esfuerzos por reducir las emisiones han demostrado no ser suficientes y por ello en los último años han surgido iniciativas para el desarrollo de soluciones tecnológicas que permitan remover grandes cantidades de dióxido de carbono (entre 100 y 1.000 Gt de CO$_2$) presente en la atmósfera y alcanzar el \textit{net zero} más rápidamente.
+Para hacer frente a esta problemática algunos actores globales (países, compañías e instituciones) acordaron implementar estrategias para reducir paulatinamente la emisión de los GEI hacia el año 2030 y llegar al año 2050 con emisión cero (también conocido como \textit{net zero}). 
+
+Sin embargo, estos esfuerzos han demostrado no ser suficientes y por ello en los último años han surgido iniciativas para el desarrollo de soluciones tecnológicas que permitan remover grandes cantidades de dióxido de carbono (entre 100 y 1.000 Gt de CO$_2$) presente en la atmósfera y alcanzar el \textit{net zero} más rápidamente.
 
 El proyecto GB es liderado el Mg. Ing. Eddie Jose Sierra Higuerey y surgió en Bogotá (Colombia), en el año 2021, como uno de los participantes de la competencia global \textit{XPRIZE Carbon Removal}, donde se ofrecía un premio económico a quienes desarrollen y demuestren la eficiencia de soluciones tecnológicas para secuestrar y retener el dióxido de carbono (CO$_2$) de la atmósfera y los océanos.
 
-Durante la competencia el equipo de GB desarrolló un proceso químico innovador para capturar CO$_2$ del aire y demostró su funcionamiento en un prototipo de pequeña escala. En este proceso el aire ambiente se inyecta con un compresor en un reactor que contiene desechos orgánicos y luego se hace circular por un tren de fotobiorreactores. El CO$_2$ queda retenido en ambas partes del proceso, para su posterior comercialización como materia prima.
+Durante la competencia los miembros del equipo de GB desarrollaron un proceso químico innovador para capturar CO$_2$ del aire y demostró su funcionamiento en un prototipo de pequeña escala. En este proceso el aire del ambiente se inyecta con un compresor en un reactor que contiene desechos orgánicos y luego se lo hace circular por un tren de fotobiorreactores. El CO$_2$ queda retenido en ambas etapas del proceso y se puede comercializar como materia prima.
 
-Para capturar grandes volúmenes de CO$_2$ mediante la implementación a gran escala del proceso químico desarrollado para la competencia, el equipo de GB de Bogotá comenzó a construir en el año 2022 un prototipo comercial al que se denominó “GB005 - Unidad Ángel”, que se estima que podrá capturar 3,3 toneladas de CO$_2$ al año. 
+Para capturar grandes volúmenes de CO$_2$ mediante la implementación a gran escala del proceso químico desarrollado, el equipo de GB de Bogotá comenzó a construir en el año 2022 un prototipo comercial al que se denominó “GB005 Unidad Ángel”, que se estima que podrá capturar 3,3 toneladas de CO$_2$ al año. Esta unidad permitirá validar las tecnologías, mejorar el diseño y atraer inversionistas al proyecto.
 
-Para la unidad GB005 el cliente solicitó a la autora del presente trabajo un dispositivo que registre, entre otros parámetros operativos, los niveles de concentración de CO$_2$ en la entrada y la salida de aire del equipo para evaluar el rendimiento del proceso de captura de este. El dispositivo propuesto incluye también sensores de temperatura y pH para monitorear los biorreactores y permitirá obtener datos para validar las tecnologías, mejorar el diseño y atraer inversionistas al proyecto.
-
-A futuro, una vez que se logre un diseño eficiente y se obtenga financiación, el equipo de GB proyecta la construcción en serie de nuevas unidades en diferentes tamaños y capacidades de captura, para comercializar tanto en Colombia, como en el resto del mundo y se necesita una plataforma de monitoreo capaz de recolectar y almacenar datos operativos de todos los equipos sin importar donde estén instalados.
-
-Como la primera unidad de GB aún se encuentra en etapa de desarrollo, la propuesta del presente trabajo se enfoca en un prototipo para evaluar su desempeño y en sentar las bases para la infraestructura de IoT, donde se tendrá un sistema de monitoreo en tiempo real para visualizar el funcionamiento general y una base de datos para almacenar la información del proceso de captura de CO$_2$ y otros detalles de la operación de la unidad.
-
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Para la unidad GB005 se solicitó a la autora del trabajo desarrollar un dispositivo que registre y muestre en un display LCD los niveles de concentración de CO$_2$ en la entrada y la salida de aire del equipo, para evaluar el rendimiento del proceso de captura. 
+A este dispositivo se adicionaron sensores de temperatura y pH para monitorear los biorreactores, así como un módulo sensor de luz y relés para controlar el encendido y apagado de la unidad. En la Figura \ref{fig:diagNodo} se muestra el diagrama en bloques del dispositivo, al que se denomina nodo de medición. 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema}
+\includegraphics[width=.65\textwidth]{./Figuras/dgNodo.pdf}
+\caption{Diagrama en bloques del nodo de medición.}
+\label{fig:diagNodo}
+\end{figure}
+
+En una instancia de trabajo anterior al curso del posgrado se definió qué microcontrolador y sensores se van a utilizar y se propuso la conexión de todos los elementos. Asimismo, se desarrolló un firmware básico para poder monitorear los niveles de CO$_2$ y mostrar las mediciones en un display. En el presente trabajo se tomará esta base de diseño para mejorar el firmware propuesto.
+
+A futuro, cuando se logre un diseño eficiente y se obtenga financiación, GB proyecta la construcción en serie de nuevas unidades en diferentes tamaños y capacidades de captura, para comercializar tanto en Colombia, como en el resto del mundo. Por ello, además del nodo de monitoreo para cada unidad, se necesita una plataforma capaz de recolectar y almacenar datos operativos de todas las unidades instaladas, sin importar donde se localicen físicamente.
+
+Como la primera unidad de GB aún se encuentra en etapa de desarrollo, la propuesta del presente trabajo es un prototipo para evaluar su desempeño, agregar funciones de comunicación inalámbrica al nodo para que envíe las mediciones de los sensores hacia un broker MQTT (\textit{Message Queues Telemetry Transport}) y desarrollar la infraestructura del sistema de monitoreo.
+
+En la Figura \ref{fig:diagBloques} se muestra una arquitectura tentativa del sistema donde se tiene el nodo de medición, un broker MQTT donde se enviarán los datos de las mediciones y un entorno de desarrollo para la aplicación que leerá los datos del broker y con estos permitirá visualizar el funcionamiento general de la unidad, en tiempo real, a través del servidor de aplicación y almacenar la información operativa en una base de datos de tiempo real. 
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/diagBloques.pdf}
+\caption{Arquitectura del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+Actualmente existen diferentes soluciones de mercado para implementar aplicaciones IoT. En el presente trabajo, para desarrollar el sistema de monitoreo, se empleará el software \textit{AVEVA System Platform} (ASP) ya que es una solución ampliamente utilizada en la industria con continuo desarrollo y soporte.
+
+El ASP soporta el protocolo MQTT, tiene un entorno gráfico que permite la implementación de aplicaciones de visualización y una base de datos histórica para almacenar las mediciones de los sensores. Además por ser la autora del presente trabajo empleada de la empresa que comercializa la solución, tiene acceso a una licencia de desarrollo sin cargo, lo que permite reducir costos y tiempo de desarrollo del proyecto.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
- 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces solo dejarla en el rol más importante. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, no debe ser colocado también como miembro del equipo.
 
 
 \begin{table}[ht]
@@ -180,50 +169,45 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Rol           & Nombre y Apellido & Organización 		& Puesto 	\\ \hline
+%Auspiciante  & -                 & 			 		& -      	\\ \hline
+Cliente       & \clientename      &\empclientename /AVEVA	&  Fundador de GB \\ \hline
+%Impulsor     &                   &              		&        	\\ \hline
+Responsable   & \authorname       & FIUBA   			& Alumna 	\\ \hline
+Colaboradores & -                 & -            		& Empleados de GB/AVEVA \\ \hline
+Orientador    & \supname	      	 & \pertesupname 		& Director del trabajo final \\ \hline
+%Equipo       & miembro1 \newline 
+%				miembro2        	 &              		&        	\\ \hline
+%Opositores   &                   &              		&        	\\ \hline
+Usuario final & -				 & -            		&  Equipo de GB y sus clientes\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+	\item Cliente: Eddie Sierra, creó GB como emprendimiento personal y es el principal interesado en el desarrollo de la aplicación de monitoreo. Trabaja en AVEVA y está tratando de impulsar la visibilidad de GB dentro de AVEVA y empresas asociadas para conseguir financiamiento e interesados. Actualmente se ocupa de todas las cuestiones constructivas de la unidad Ángel, con lo cual no dispone de tiempo para hacer un seguimiento detallado del desarrollo. Su prioridad es que el desarrollo tenga el menor costo posible. Vive en Colombia y se debe considerar la diferencia horaria para programar reuniones con él.
+	\item Orientador: Milton Sosa, ayudará con la definición de los requerimientos y alcance del proyecto. Se encuentra viviendo en Europa y se debe considerar la diferencia horaria para programar reuniones con él.
+	\item Usuario final: los miembros del equipo de GB y sus clientes utilizarán la plataforma desde diferentes partes del mundo para visualizar el estado de funcionamiento y rendimiento de las unidades.
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
-
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+El propósito de este proyecto es desarrollar e implementar el prototipo para una plataforma de monitoreo que permita visualizar en tiempo real y almacenar el historial de los datos operacionales de la unidad GB005 y las unidades futuras del proyecto \textit{Green Backbone}, con el objetivo de visualizar el estado de funcionamiento de las unidades, evaluar el rendimiento de estas y programar su mantenimiento y recambio de consumibles.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
+El proyecto incluye:
+\begin{itemize}
+	\item Supuesto 1
+	\item Supuesto 2...
+\end{itemize}
+
+El proyecto no incluye:
+\begin{itemize}
+	\item Supuesto 1
+	\item Supuesto 2...
+\end{itemize}
 
 \begin{consigna}{red}
 ¿Qué se incluye y que no se incluye en este proyecto?
