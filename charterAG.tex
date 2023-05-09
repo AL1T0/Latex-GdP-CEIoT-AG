@@ -20,7 +20,7 @@
 \autor{Ing. Alena Grebneva} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Mg. Ing Milton Eduardo Sosa}
+\director{Mg. Ing. Milton Eduardo Sosa}
 \pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
@@ -114,7 +114,7 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
-El presente trabajo forma parte de la iniciativa de sostenibilidad \textit{Green Backbone} (en adelante GB) cuyo objetivo es hacer frente a los efectos de la emisión de gases de efecto invernadero (GEI) y descarbonizar el aire que respiramos. 
+El presente proyecto forma parte de la iniciativa de sostenibilidad \textit{Green Backbone} (en adelante GB) cuyo objetivo es hacer frente a los efectos de la emisión de gases de efecto invernadero (GEI) y descarbonizar el aire del ambiente. 
 
 La emisión de GEI que se produce en actividades humanas, tales como la quema de hidrocarburos y la industrialización, se asocia con el cambio climático y tiene efectos significativos en los sistemas naturales y humanos en todo el mundo, por ejemplo, el aumento del nivel del mar, el derretimiento de glaciares y la alteración de los patrones climáticos. Estos efectos a su vez pueden tener un impacto importante en la seguridad alimentaria, en la disponibilidad de agua y en la salud humana. 
 
@@ -128,8 +128,8 @@ Durante la competencia los miembros del equipo de GB desarrollaron un proceso qu
 
 Para capturar grandes volúmenes de CO$_2$ mediante la implementación a gran escala del proceso químico desarrollado, el equipo de GB de Bogotá comenzó a construir en el año 2022 un prototipo comercial al que se denominó “GB005 Unidad Ángel”, que se estima que podrá capturar 3,3 toneladas de CO$_2$ al año. Esta unidad permitirá validar las tecnologías, mejorar el diseño y atraer inversionistas al proyecto.
 
-Para la unidad GB005 se solicitó a la autora del trabajo desarrollar un dispositivo que registre y muestre en un display LCD los niveles de concentración de CO$_2$ en la entrada y la salida de aire del equipo, para evaluar el rendimiento del proceso de captura. 
-A este dispositivo se adicionaron sensores de temperatura y pH para monitorear los biorreactores, así como un módulo sensor de luz y relés para controlar el encendido y apagado de la unidad. En la Figura \ref{fig:diagNodo} se muestra el diagrama en bloques del dispositivo, al que se denomina nodo de medición. 
+Para la unidad GB005 se solicitó a la autora del proyecto desarrollar un dispositivo que registre y muestre en un display LCD los niveles de concentración de CO$_2$ en la entrada y la salida de aire del equipo, para evaluar el rendimiento del proceso de captura. 
+A este dispositivo se adicionaron sensores de temperatura y pH para monitorear los biorreactores, así como un módulo sensor de luz y relés para controlar el encendido y apagado de la unidad. En la figura \ref{fig:diagNodo} se muestra el diagrama en bloques del dispositivo, al que se denomina nodo de medición. 
 
 \begin{figure}[htpb]
 \centering 
@@ -138,13 +138,13 @@ A este dispositivo se adicionaron sensores de temperatura y pH para monitorear l
 \label{fig:diagNodo}
 \end{figure}
 
-En una instancia de trabajo anterior al curso del posgrado se definió qué microcontrolador y sensores se van a utilizar y se propuso la conexión de todos los elementos. Asimismo, se desarrolló un firmware básico para poder monitorear los niveles de CO$_2$ y mostrar las mediciones en un display. En el presente trabajo se tomará esta base de diseño para mejorar el firmware propuesto.
+En una instancia de trabajo anterior al curso del posgrado se definió qué microcontrolador y sensores se van a utilizar y se propuso la conexión de todos los elementos. Asimismo, se desarrolló un firmware básico para poder monitorear los niveles de CO$_2$ y mostrar las mediciones en un display. En el presente proyecto se tomará esta base de diseño para mejorar el firmware propuesto.
 
 A futuro, cuando se logre un diseño eficiente y se obtenga financiación, GB proyecta la construcción en serie de nuevas unidades en diferentes tamaños y capacidades de captura, para comercializar tanto en Colombia, como en el resto del mundo. Por ello, además del nodo de monitoreo para cada unidad, se necesita una plataforma capaz de recolectar y almacenar datos operativos de todas las unidades instaladas, sin importar donde se localicen físicamente.
 
-Como la primera unidad de GB aún se encuentra en etapa de desarrollo, la propuesta del presente trabajo es un prototipo para evaluar su desempeño, agregar funciones de comunicación inalámbrica al nodo para que envíe las mediciones de los sensores hacia un broker MQTT (\textit{Message Queues Telemetry Transport}) y desarrollar la infraestructura del sistema de monitoreo.
+Como la primera unidad de GB aún se encuentra en etapa de desarrollo, la propuesta del presente proyecto es un prototipo para evaluar su desempeño, agregar funciones de comunicación inalámbrica al nodo para que envíe las mediciones de los sensores hacia un broker MQTT (\textit{Message Queues Telemetry Transport}) y desarrollar la infraestructura del sistema de monitoreo.
 
-En la Figura \ref{fig:diagBloques} se muestra una arquitectura tentativa del sistema donde se tiene el nodo de medición, un broker MQTT donde se enviarán los datos de las mediciones y un entorno de desarrollo para la aplicación que leerá los datos del broker y con estos permitirá visualizar el funcionamiento general de la unidad, en tiempo real, a través del servidor de aplicación y almacenar la información operativa en una base de datos de tiempo real. 
+En la figura \ref{fig:diagBloques} se muestra una arquitectura tentativa del sistema donde se tiene el nodo de medición, un broker MQTT donde se enviarán los datos de las mediciones y un entorno de desarrollo para la aplicación que leerá los datos del broker y con estos permitirá visualizar el funcionamiento general de la unidad, en tiempo real, a través del servidor de aplicación y almacenar la información operativa en una base de datos de tiempo real. 
 
 \begin{figure}[htpb]
 \centering 
@@ -155,9 +155,9 @@ En la Figura \ref{fig:diagBloques} se muestra una arquitectura tentativa del sis
 
 \vspace{25px}
 
-Actualmente existen diferentes soluciones de mercado para implementar aplicaciones IoT. En el presente trabajo, para desarrollar el sistema de monitoreo, se empleará el software \textit{AVEVA System Platform} (ASP) ya que es una solución ampliamente utilizada en la industria con continuo desarrollo y soporte.
+Actualmente existen diferentes soluciones de mercado para implementar aplicaciones IoT. En el presente proyecto, para desarrollar el sistema de monitoreo se empleará el software \textit{AVEVA System Platform} (ASP) ya que es una solución ampliamente utilizada en la industria con continuo desarrollo y soporte y está preparada para .
 
-El ASP soporta el protocolo MQTT, tiene un entorno gráfico que permite la implementación de aplicaciones de visualización y una base de datos histórica para almacenar las mediciones de los sensores. Además por ser la autora del presente trabajo empleada de la empresa que comercializa la solución, tiene acceso a una licencia de desarrollo sin cargo, lo que permite reducir costos y tiempo de desarrollo del proyecto.
+El ASP soporta el protocolo MQTT, tiene un entorno gráfico que permite la implementación de aplicaciones de visualización y una base de datos histórica para almacenar las mediciones de los sensores. Además por ser la autora del presente proyecto empleada de la empresa que comercializa la solución, tiene acceso a una licencia de desarrollo sin cargo, lo que permite reducir costos y tiempo de desarrollo del proyecto.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
@@ -184,7 +184,7 @@ Usuario final & -				 & -            		&  Equipo de GB y sus clientes\\ \hline
 \end{table}
 
 \begin{itemize}
-	\item Cliente: Eddie Sierra, creó GB como emprendimiento personal y es el principal interesado en el desarrollo de la aplicación de monitoreo. Trabaja en AVEVA y está tratando de impulsar la visibilidad de GB dentro de AVEVA y empresas asociadas para conseguir financiamiento e interesados. Actualmente se ocupa de todas las cuestiones constructivas de la unidad Ángel, con lo cual no dispone de tiempo para hacer un seguimiento detallado del desarrollo. Su prioridad es que el desarrollo tenga el menor costo posible. Vive en Colombia y se debe considerar la diferencia horaria para programar reuniones con él.
+	\item Cliente: Eddie Sierra, creó GB como emprendimiento personal y es el principal interesado en el desarrollo de la aplicación de monitoreo para mostrar el valor del proyecto. Trabaja en AVEVA y está impulsando la visibilidad del proyecto GB dentro de esta organización y empresas asociadas para conseguir financiamiento e interesados. Actualmente se ocupa de todas las cuestiones constructivas de la unidad Ángel, con lo cual no dispone de tiempo para hacer un seguimiento detallado del desarrollo. Su prioridad es que el desarrollo tenga el menor costo posible y esté en funcionamiento cuanto antes. Vive en Colombia y se debe considerar la diferencia horaria para programar reuniones con él.
 	\item Orientador: Milton Sosa, ayudará con la definición de los requerimientos y alcance del proyecto. Se encuentra viviendo en Europa y se debe considerar la diferencia horaria para programar reuniones con él.
 	\item Usuario final: los miembros del equipo de GB y sus clientes utilizarán la plataforma desde diferentes partes del mundo para visualizar el estado de funcionamiento y rendimiento de las unidades.
 \end{itemize}
@@ -193,47 +193,49 @@ Usuario final & -				 & -            		&  Equipo de GB y sus clientes\\ \hline
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-El propósito de este proyecto es desarrollar e implementar el prototipo para una plataforma de monitoreo que permita visualizar en tiempo real y almacenar el historial de los datos operacionales de la unidad GB005 y las unidades futuras del proyecto \textit{Green Backbone}, con el objetivo de visualizar el estado de funcionamiento de las unidades, evaluar el rendimiento de estas y programar su mantenimiento y recambio de consumibles.
+Desarrollar e implementar el prototipo para una plataforma de monitoreo que permita visualizar en tiempo real y almacenar el historial de los datos operacionales de la unidad GB005 y las unidades futuras del proyecto \textit{Green Backbone}, con el objetivo de visualizar el estado de funcionamiento de las unidades, evaluar el rendimiento de estas y programar su mantenimiento y recambio de consumibles.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 El proyecto incluye:
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Codificación del firmware del nodo para que envíe datos mediante el protocolo MQTT
+	\item Despliegue y configuración del entorno de desarrollo y pruebas
+		\begin{itemize}
+		\item Configuración del entorno virtual
+		\item Instalación y licenciamiento del software ASP
+		\item Configuración de acceso y seguridad
+		\end{itemize}
+	\item Configuración de la colección e historización de datos
+	\item Desarrollo de la aplicación de visualización en tiempo real
+	\item Desarrollo de plantillas para las unidades futuras
+	
 \end{itemize}
 
 El proyecto no incluye:
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Desarrollo del hardware del nodo de medición
+	\item Despliegue del broker MQTT
+	\item Contratación de servicios en la nube para implementar la aplicación de monitoreo
+	\item Adquisición de cualquier otra licencia de software que pueda ser requerida
+	\item Puesta en marcha para producción
+	
 \end{itemize}
-
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+Para el desarrollo del presente proyecto se supone que: 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Se contará con los recursos económicos necesarios para realizar del proyecto
+	\item Se tendrá a disposición la infraestructura de hardware necesaria para implementar la aplicación de monitoreo
+	\item Se dispondrá una conexión a Internet mediante Wi-Fi continuamente para las pruebas
+	\item No habrá dificultades para conseguir el software necesario (licencias, bibliotecas, certificaciones, etc)
+	\item Se dispondrá del conocimiento necesario para programar el microcontrolador
+	\item Se dispondrá del conocimiento para desarrollar la aplicación de monitoreo
+	\item Se contará con la colaboración de profesionales idóneos en los diferentes frentes para obtener un desarrollo de buena calidad
+	\item El cliente aceptará que algunas mediciones sean simuladas por no disponer de los sensores localmente
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
