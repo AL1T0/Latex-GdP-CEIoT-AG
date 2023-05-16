@@ -104,7 +104,7 @@
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}
 %\usepackage{array}
-
+\usepackage{enumitem}
 
 % Adds space between caption and table
 \usepackage[tableposition=top]{caption}
