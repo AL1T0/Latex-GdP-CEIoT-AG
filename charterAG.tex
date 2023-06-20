@@ -40,7 +40,7 @@
  
 \fechaINICIO{25 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{13 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{Marzo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{Diciembre de 2023}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -70,12 +70,9 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento y asignación del director		&\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive             	& 8 de mayo de 2023 \\ \hline
-2      & Se completa hasta el punto 9 inclusive				& 16 de mayo de 2023 \\ \hline
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+2      & Se completa hasta el punto 9 inclusive				    & 16 de mayo de 2023 \\ \hline
+3      & Se completa hasta el punto 12 inclusive                & 23 de mayo de 2023 \\ \hline
+4      & Se completa el plan	                                & 30 de mayo de 2023 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -92,7 +89,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{1cm}
 
-Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el desarrollo de un prototipo para un sistema capaz de monitorear a distancia los equipos de captura de CO$_2$ pertenecientes al proyecto \textit{Green Backbone}, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública en \fechaFinalName.
+Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el desarrollo de un prototipo para un sistema capaz de monitorear a distancia los equipos de captura de CO$_2$ pertenecientes al proyecto \textit{Green Backbone}, y tendrá un presupuesto preliminar estimado de 671 h de trabajo y \$ 4.006.755, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública en \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -160,7 +157,7 @@ En la figura \ref{fig:diagBloques} se muestra una arquitectura tentativa del sis
 \label{fig:diagBloques}
 \end{figure}
 
-El nodo de medición recolecta las emdiciones de los sensores y los envía al broker MQTT, que actúa como un intermediario entre el nodo de medición y la aplicación.
+El nodo de medición recolecta las mediciones de los sensores y los envía al broker MQTT, que actúa como un intermediario entre el nodo de medición y la aplicación.
 
 La aplicación lee los datos del broker MQTT a través del servidor de entradas y salidas. Utilizando esta información, permite visualizar el funcionamiento general de la unidad en tiempo real a través del servidor de aplicación.
 
@@ -206,13 +203,13 @@ Usuario final & -				 & -            		&  Equipo de GB y sus clientes\\ \hline
 
 Desarrollar e implementar el prototipo para una plataforma de monitoreo que permita visualizar en tiempo real y almacenar el historial de los datos operacionales de la unidad GB005 y las unidades futuras del proyecto \textit{Green Backbone}. 
 
-El objetivo este prototipo será monitorear el estado de funcionamiento de las unidades, evaluar su rendimiento y poder programar el mantenimiento o recambio de consumibles.
+El objetivo de este prototipo será monitorear el estado de funcionamiento de las unidades, evaluar su rendimiento y poder programar el mantenimiento o recambio de consumibles.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 El proyecto incluye:
 \begin{itemize}
-	\item Codificación del firmware del nodo para que envíe datos mediante el protocolo MQTT
+	\item Adaptación del firmware del nodo para que envíe datos mediante el protocolo MQTT
 	\item Despliegue y configuración del entorno de desarrollo y pruebas
 		\begin{itemize}
 		\item Configuración del entorno virtual
@@ -240,14 +237,14 @@ El proyecto no incluye:
 
 Para el desarrollo del presente proyecto se supone que: 
 \begin{itemize}
-	\item Se contará con los recursos económicos necesarios para realizar del proyecto
-	\item Se tendrá a disposición la infraestructura de hardware necesaria para implementar la aplicación de monitoreo
-	\item Se dispondrá una conexión a Internet mediante Wi-Fi continuamente para las pruebas
-	\item No habrá dificultades para conseguir el software necesario (licencias, bibliotecas, certificaciones, etc)
-	\item Se dispondrá del conocimiento necesario para programar el microcontrolador
-	\item Se dispondrá del conocimiento para desarrollar la aplicación de monitoreo
-	\item Se contará con la colaboración de profesionales idóneos en temas de conectividad, programación del microcontrolador y desarrollo de aplicaciones con el ASP, para obtener un resultado de buena calidad
-	\item El cliente aceptará que algunas mediciones sean simuladas por no disponer de los sensores localmente
+	\item Se contará con los recursos económicos necesarios para realizar del proyecto.
+	\item Se tendrá a disposición la infraestructura de hardware necesaria para implementar la aplicación de monitoreo.
+	\item Se dispondrá una conexión a Internet mediante Wi-Fi continuamente para las pruebas.
+	\item No habrá dificultades para conseguir el software necesario (licencias, bibliotecas, certificaciones, etc).
+	\item Se dispondrá del conocimiento necesario para programar el microcontrolador.
+	\item Se dispondrá del conocimiento para desarrollar la aplicación de monitoreo.
+	\item Se contará con la colaboración de profesionales idóneos en temas de conectividad, programación del microcontrolador y desarrollo de aplicaciones con el ASP.
+	\item El cliente aceptará que algunas mediciones sean simuladas por no disponer de los sensores localmente.
 \end{itemize}
 
 \section{6. Requerimientos}
@@ -256,15 +253,36 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{enumerate}
 	\item Requerimientos de \textit{firmware} del nodo de medición
 		\begin{enumerate}
+                \item Correr sobre un microcontrolador ESP32 (ESP-WROOM-32)
 			\item Disponer de conexión a una red Wi-Fi en el sitio para pruebas
 			\item Envío y recepción de datos mediante el protocolo MQTT, utilizando certificados SSL/TLS para la comunicación con el broker
 			\item Obtención de información horaria desde un servidor NTP
-			\item Lectura de las mediciones de CO$_2$ de dos sensores MH-Z19B (correspondientes a la entrada y salida de aire) empleando la UART
-			\item Lectura de la medición de temperatura de un sensor DS18B20, utilizando el protocolo \textit{One Wire}
-			\item Lectura de la medición del pH de un sensor con salida analógica, mediante el ADC del microcontrolador
-			\item Detección de luz diurna a través de un sensor conectado a una entrada discreta
-			\item Accionamiento de dos relés mediante salidas discretas, para encender y apagar los compresores
-			\item Visualización de las mediciones en un display LCD conectado al puerto I$^2$C
+			\item Lectura de las mediciones de CO$_2$ de dos sensores MH-Z19B/T6793 empleando los puertos UART/I$^2$C
+               \begin{itemize}
+                   \item Los sensores MH-Z19B poseen un rango de medición entre 0 y 5000 ppm con una precisión de ±50 ppm y salida UART TTL de 3.3 V.
+                   \item Los sensores T6793 poseen un rango de medición entre 0 y 2000 ppm con una precisión de ±45 ppm y salida I$^2$C que soporta Modbus.
+               \end{itemize}
+			\item Lectura de la medición de temperatura de un sensor digital DS18B20, utilizando el protocolo \textit{1-Wire}
+                \begin{itemize}
+                   \item Este sensor posee un rango de medición entre -55°C y 125°C con una precisión de ±0.5°C entre -10 y +85 °C, tiene una resolución programable entre 9 y 12 bits y cuenta con una salida digital de datos para la comunicación bidireccional con el microcontrolador.
+               \end{itemize}
+			\item Lectura y conversión de la medición del pH de un sensor SEN0249, mediante el ADC del microcontrolador
+                \begin{itemize}
+                   \item Este sensor posee un rango de medición entre 0 y 14 pH, tiene una precisión de ±0.1 pH y cuenta con un transmisor con salida analógica entre 0 y 3.3 V.
+               \end{itemize}
+			\item Detección de luz diurna a través de un módulo fotorresistivo LDR (\textit{Light Depending Resistor}) conectado a una entrada discreta
+                \begin{itemize}
+                   \item Este sensor posee una salida discreta que indica con un nivel alto que la intensidad de la luz se encuentra por debajo de cierto umbral (que se establece mediante el potenciómetro de la placa).
+               \end{itemize}
+			\item Accionamiento de un módulo con relés mediante salidas discretas, para encender y apagar los compresores
+                \begin{itemize}
+                   \item Este módulo posee dos entradas opto-acopladas y dos salidas a relé que permiten controlar la conexión y desconexión de cargas de hasta 250 V (CA) y 10 A.
+               \end{itemize}
+			\item Visualización de las mediciones en un display LCD1602 conectado al puerto I$^2$C
+                \begin{itemize}
+                   \item Este display posee 16 caracteres en 2 líneas, color azul con retro-iluminación ajustable e incluye un adaptador para I$^2$C.
+               \end{itemize}
+   
 		\end{enumerate}
 	\item Requerimientos funcionales del broker MQTT
 		\begin{enumerate}
@@ -282,7 +300,7 @@ Para el desarrollo del presente proyecto se supone que:
 			\item Escalabilidad para agregar nuevas unidades de GB a futuro
 			\item Generación de alarmas cuando se superen los umbrales definidos para las mediciones
 			\item Configuración de los umbrales de alarma
-			\item Exportación de los datos en diferentes formatos
+			\item Generar reportes de datos instantáneos e históricos
 			\item Manejo de errores de comunicación con el broker MQTT y con la base de datos
 		\end{enumerate}	
 	\item Requerimientos de la interfaz de visualización
@@ -298,15 +316,41 @@ Para el desarrollo del presente proyecto se supone que:
 		\end{enumerate}	
 	\item Requerimientos de \textit{testing}
 		\begin{enumerate}
-			\item Se deberán realizar pruebas de funcionalidad para verificar que el nodo de monitoreo, el broker MQTT, y la aplicación de monitoreo funcionen correctamente
-			\item Se deberán realizar pruebas de integración para verificar que los diferentes componentes del sistema funcionen correctamente en conjunto
-			\item Se deberán realizar pruebas de rendimiento para verificar que el sistema sea capaz de enviar y procesar los datos de forma eficiente
-			\item Se deberán realizar pruebas de seguridad para verificar que el sistema sea seguro y no tenga vulnerabilidades que puedan ser explotadas
+			\item Pruebas de funcionalidad para validar que el nodo de monitoreo realice la lectura de las mediciones desde los sensores sin errores, por ejemplo, contrastando los valores medidos contra un sensor calibrado o valores tabulados para las condiciones ambientales bajo las que se realizó una determinada medición.
+ 			\item Pruebas de comunicación para validar que el broker MQTT recibe los datos enviados por el nodo de medición, por ejemplo, empleando un cliente MQTT externo.
+ 			\item Pruebas de comunicación para validar que el servidor de entradas/salidas de la aplicación de monitoreo reciba las mediciones del broker MQTT con el mismo formato enviado desde el nodo de medición.
+			\item Pruebas de integración para validar que los diferentes componentes del sistema funcionen en conjunto, de modo que en la aplicación de monitoreo y base de datos histórica que se vean exactamente los mismos datos que genera el nodo de medición.
+			\item Se deberán realizar pruebas de seguridad para validar que el acceso a las herramientas de desarrollo y visualización solamente sean accesibles para los usuarios autorizados.
 		\end{enumerate}	
 \end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
+Para determinar los \textit{story points} de una historia de usuario, se asignaron valores a cada uno de los siguientes aspectos:
+\begin{itemize}
+\item Complejidad del trabajo:
+	\begin{itemize}
+	\item Alta: 13
+	\item Media: 5
+	\item Baja: 1
+	\end{itemize}
+\item Dificultad del trabajo:
+	\begin{itemize}
+	\item Alta: 5
+	\item Media: 3
+	\item Baja: 1
+	\end{itemize}
+\item Incertidumbre del trabajo:
+	\begin{itemize}
+	\item Alta: 5
+	\item Media: 3
+	\item Baja: 1
+	\end{itemize}
+\end{itemize}
+
+Para obtener los \textit{story points}, se sumaron los valores asignados a cada aspecto y se aproximaron al siguiente número de la serie de Fibonacci.
+
+Por ejemplo, si la complejidad del trabajo es media (5), la dificultad es alta (5) y la incertidumbre es media (3), los \textit{story points} serían 21 (5 + 5 + 3 = 13, que se aproxima al siguiente número de Fibonacci, que es 21).
 \begin{enumerate}
 \item Como miembro del equipo de GB, quiero registrar los niveles de concentración de CO$_2$ en la entrada y la salida de aire de la unidad, para evaluar el rendimiento del proceso de captura.
 \textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
@@ -352,47 +396,21 @@ Para el desarrollo del presente proyecto se supone que:
 \textit{Story points}: 13 (complejidad: 5, dificultad: 3, incertidumbre: 3)
 \end{enumerate}
 
-Para determinar los \textit{story points} de una historia de usuario, se asignaron valores a cada uno de los siguientes aspectos:
-\begin{itemize}
-\item Complejidad del trabajo:
-	\begin{itemize}
-	\item Alta: 13
-	\item Media: 5
-	\item Baja: 1
-	\end{itemize}
-\item Dificultad del trabajo:
-	\begin{itemize}
-	\item Alta: 5
-	\item Media: 3
-	\item Baja: 1
-	\end{itemize}
-\item Incertidumbre del trabajo:
-	\begin{itemize}
-	\item Alta: 5
-	\item Media: 3
-	\item Baja: 1
-	\end{itemize}
-\end{itemize}
-
-Para obtener los \textit{story points}, se sumaron los valores asignados a cada aspecto y se aproximaron al siguiente número de la serie de Fibonacci.
-
-Por ejemplo, si la complejidad del trabajo es media (5), la dificultad es alta (5) y la incertidumbre es media (3), los \textit{story points} serían 21 (5 + 5 + 3 = 13, que se aproxima al siguiente número de Fibonacci, que es 21).
-
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 \begin{itemize}
-\item Firmware mejorado para el nodo de medición, que permitirá enviar mediciones de los sensores hacia un broker MQTT y podrá ser utilizado para futuras unidades de GB
+\item Firmware mejorado para el nodo de medición, que permitirá enviar mediciones de los sensores hacia un broker MQTT y podrá ser utilizado para futuras unidades de GB.
 
-\item Sistema de monitoreo para la unidad GB005, que permitirá visualizar en tiempo real las mediciones de CO$_2$, temperatura, pH y luz, así como el estado de encendido y apagado de la unidad
+\item Sistema de monitoreo para la unidad GB005, que permitirá visualizar en tiempo real las mediciones de CO$_2$, temperatura, pH y luz, así como el estado de encendido y apagado de la unidad.
 
-\item Plataforma para recolectar y almacenar datos operativos de todas las unidades instaladas de GB, capaz de recibir datos de los nodos de medición mediante un broker MQTT y mostrarlos en una interfaz de usuario
+\item Plataforma para recolectar y almacenar datos operativos de todas las unidades instaladas de GB, capaz de recibir datos de los nodos de medición mediante un broker MQTT y mostrarlos en una interfaz de usuario.
 
-\item Documentación técnica del proyecto, incluyendo diagramas y esquemáticos de conexión, listados de componentes, código fuente del firmware y archivos de backup del sistema de monitoreo
+\item Documentación técnica del proyecto, que incluye diagramas y esquemáticos de conexión, listados de componentes, código fuente del firmware y archivos de backup del sistema de monitoreo.
 \end{itemize}
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 \begin{enumerate}
-	\item Gestión de proyecto (50 horas)
+	\item Gestión de proyecto (50 h)
 	\begin{enumerate}
 		\item Reuniones con el cliente y con el director del trabajo (10 h)
 		\item Elaboración del plan de proyecto de Trabajo Final (20 h)
@@ -448,112 +466,62 @@ Por ejemplo, si la complejidad del trabajo es media (5), la dificultad es alta (
 		\item Pruebas de funcionamiento en \textit{runtime} (10 h)
 		\item Corrección de errores (20 h)
 	\end{enumerate}
-	\item Generación de entregables y proceso de cierre (80 horas)
+	\item Generación de entregables y proceso de cierre (95 h)
 	\begin{enumerate}
-		\item Elaboración del informe de avance (15 horas)
+		\item Elaboración del informe de avance (15 h)
 		\item Elaboración memoria técnica de Trabajo Final (40 h)
-		\item Revisión y correcciones de la memoria (10 h)
-		\item Elaboración de la presentación final (8 h)
-		\item Revisión y correcciones de la presentación final (2 h)
+		\item Revisión y correcciones de la memoria (15 h)
+		\item Elaboración de la presentación final (15 h)
+		\item Revisión y correcciones de la presentación final (10h)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 656 h.
+Cantidad total de horas: 671 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
-
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
-
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
-
+En la figura \ref{fig:AoN_lt} se muestran los grupos de tareas, junto con el camino crítico.
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
+\includegraphics[width=.9\textwidth]{./Figuras/AON_Light.pdf}
+\caption{Diagrama de \textit{Activity on Node} de alto nivel.}
+\label{fig:AoN_lt}
+\end{figure}
+
+En la figura \ref{fig:AoN} se muestra el diagrama de \textit{Activity on Node} con el detalle de todas las tareas del proyecto, también indicando el camino crítico.
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=1\textwidth]{./Figuras/AON_Full.pdf}
+\caption{Diagrama de \textit{Activity on Node} detallado.}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-
-
-
+\pagebreak
+\begin{landscape}
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de Gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de Gantt de ejemplo}
-\label{fig:gantt}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.70\textheight]{./Figuras/Gantt01.png}
+\caption{Diagrama de Gantt del proyecto (parte 1).}
+\label{fig:diagGantt01}
 \end{figure}
-
+\end{landscape}
 
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
-\label{fig:diagGantt}
+\includegraphics[height=.60\textheight]{./Figuras/Gantt02.png}
+\caption{Diagrama de Gantt del proyecto (parte 2).}
+\label{fig:diagGantt02}
 \end{figure}
-
 \end{landscape}
-
-\end{consigna}
-
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
+A continuación, se muestra el presupuesto del proyecto, expresado en pesos argentinos.
 
 \begin{table}[htpb]
 \centering
@@ -566,24 +534,53 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+% fila 1
+  \multicolumn{1}{|l|}{Horas de ingeniería y desarrollo}  &
+  \multicolumn{1}{c|}{671} &
+  \multicolumn{1}{c|}{\$ 4.000} &
+  \multicolumn{1}{c|}{\$ 2.684.000} \\ \hline
+% fila 2 
+  \multicolumn{1}{|l|}{Microcontrolador ESP32 ESP-WROOM-32 Wi-Fi} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 4.000} &
+  \multicolumn{1}{c|}{\$ 4.000} \\ \hline
+% fila 3 
+  \multicolumn{1}{|l|}{Sensor de CO$_2$ NDIR MH-Z19B} &
+  \multicolumn{1}{c|}{2} &
+  \multicolumn{1}{c|}{\$ 29.950} &
+  \multicolumn{1}{c|}{\$ 59.900} \\ \hline
+% fila 4 
+  \multicolumn{1}{|l|}{Sensor de CO$_2$ NDIR T6793} &
+  \multicolumn{1}{c|}{2} &
+  \multicolumn{1}{c|}{\$ 19.967} &
+  \multicolumn{1}{c|}{\$ 39.934} \\ \hline
+% fila 5 
+  \multicolumn{1}{|l|}{Sensor de temperatura DS18B20 sumergible} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 1.120} &
+  \multicolumn{1}{c|}{\$ 1.120} \\ \hline
+% fila 6 
+  \multicolumn{1}{|l|}{Display LCD 1602 I$^2$C azul} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 3.000} &
+  \multicolumn{1}{c|}{\$ 3.000} \\ \hline
+% fila 7 
+  \multicolumn{1}{|l|}{Sensor de pH DFRobot SEN0249} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 67.857} &
+  \multicolumn{1}{c|}{\$ 67.857} \\ \hline
+% fila 8 
+  \multicolumn{1}{|l|}{Módulo de relés 2 canales 5 V} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 1.525} &
+  \multicolumn{1}{c|}{\$ 1.525} \\ \hline
+% fila 9 
+  \multicolumn{1}{|l|}{Módulo sensor de luz con LDR} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 632} &
+  \multicolumn{1}{c|}{\$ 632} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 2.861.968} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -591,22 +588,14 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+\multicolumn{1}{|l|}{40 \% de los costos directos} &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 1.144.787} &
+  \multicolumn{1}{c|}{\$ 1.144.787} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 1.144.787} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & \$ 4.006.755
    \\ \hline
 \end{tabularx}%
 \end{table}
@@ -615,103 +604,209 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+a) Identificación de los riesgos y estimación de sus consecuencias:
+
+Los riesgos listados a continuación serán cuantificados, en un rango del 1 al 10, en los siguientes índices:
+Severidad (S): cuanto más severo el riesgo, más alto el número.
+Ocurrencia (O): cuanto más probable es que ocurra el riesgo, más alto el número.
+
+Riesgo 1: falla en la conexión a Internet en el sitio de pruebas.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Severidad (S): 7. Esta falla impediría la comunicación entre el nodo de medición y el broker MQTT, lo que afectaría la visualización de datos en la aplicación de monitoreo.
+	\item Probabilidad de ocurrencia (O): 5. La probabilidad puede ser moderada, ya que depende de la calidad y estabilidad, tanto de la red interna, como del proveedor de servicios de internet en el sitio de pruebas. 
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: errores de firmware que afecten el envío de datos al broker MQTT.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 6. Si hay errores en el firmware del nodo de medición, los datos pueden enviarse incorrectamente o no enviarse en absoluto. Esto dificulta el monitoreo en tiempo real y la obtención de datos.
+	\item Ocurrencia (O): 4. Los errores en el firmware pueden ocurrir debido a problemas de programación, falta de pruebas exhaustivas o cambios inesperados en los requisitos. Existe una probabilidad moderada de que se presenten errores en el firmware del nodo de medición.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: falla de los sensores que genere mediciones inexactas o nulas.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 9. Ante la falla de uno o varios sensores, las mediciones obtenidas podrían ser inexactas o nulas, lo que afectaría la calidad y utilidad de los datos recopilados y visualizados en la plataforma de monitoreo.
+	\item Ocurrencia (O): 4. La probabilidad de fallos en los sensores de medición puede ser baja, especialmente si se utilizan sensores de alta calidad y se realiza un mantenimiento adecuado. Sin embargo, existe la posibilidad de que los sensores experimenten problemas técnicos o de calibración.
 \end{itemize}
 
+Riesgo 4: errores en la configuración de seguridad y acceso de la plataforma de monitoreo.
+\begin{itemize}
+	\item Severidad (S): 6. Implica problemas de autenticación y control de acceso a la plataforma de monitoreo, lo que podría comprometer la integridad y privacidad de los datos y la funcionalidad general del sistema.
+	\item Ocurrencia (O): 6. La probabilidad puede ser moderada, ya que depende de la precisión y exhaustividad con la que se configuren los mecanismos de seguridad y acceso.
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 5: desvinculación de algún miembro importante del equipo de GB de su trabajo principal.
+\begin{itemize}
+	\item Severidad (S): 8. Implica que no se tenga más acceso a herramientas o recursos cruciales para el desarrollo de alguna de las partes del proyecto. Esto a su vez deriva en un cambio de alcance o requerimientos con el proyecto en marcha.
+	\item Ocurrencia (O): 4. Hay una probabilidad moderada de que algún miembro se desvincule de la compañía, ya sea por una oportunidad de crecimiento profesional en otra compañía o por recorte de costos.
+\end{itemize}
+
+Riesgo 6: cambios en los requerimientos del cliente.
+\begin{itemize}
+	\item Severidad (S): 7. Si se producen cambios significativos en los requerimientos del cliente durante el desarrollo del proyecto, podría ser necesario ajustar el diseño y la implementación, lo que podría generar retrasos y costos adicionales.
+	\item Ocurrencia (O): 6. La probabilidad de que se produzcan cambios en los requerimientos del cliente es moderada, ya que es común que surjan nuevas necesidades o se realicen ajustes a medida que avanza el proyecto.
+\end{itemize}
+
+b) Tabla de gestión de riesgos, donde el RPN se calcula como RPN=SxO:
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+
+Falla en la conexión a Internet en el sitio de pruebas & 7 & 5 & 35 & & & \\ \hline
+Errores de firmware que afecten el envío de datos al broker MQTT & 6 & 5 & 30 & & & \\ \hline
+Falla de los sensores que genere mediciones inexactas o nulas & 9 & 4 & 36 & 7 & 3 & 21 \\ \hline
+Errores en la configuración de seguridad y acceso de la plataforma de monitoreo & 6 & 6 & 36 & 6 & 5 & 30 \\ \hline
+Desvinculación de algún miembro importante del equipo de GB de su trabajo principal & 8 & 4 & 32 & & & \\ \hline
+Cambios en los requerimientos del cliente & 7 & 6 & 42 & 7 & 4 & 28 \\ \hline
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Criterio adoptado: se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean
+mayores a 35.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+\pagebreak
+Riesgo 3: Falla de los sensores que genere mediciones inexactas o nulas.
+\begin{itemize}
+	\item Plan de mitigación: 
+        \begin{itemize}
+	       \item Realizar un mantenimiento y calibración regular de los sensores para asegurar su correcto funcionamiento. 
+	       \item Desarrollar un algoritmo que detecte falla en los sensores y envíe una alerta al sistema de monitoreo. 
+	       \item Contar con sensores de respaldo para reemplazar rápidamente aquellos que presenten fallas.
+        \end{itemize}
+	\item Severidad (S*): 7 (sin cambios).
+	\item Ocurrencia (O*): 3 (reducida), considerando las medidas de mitigación implementadas.
+\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 4: Errores en la configuración de seguridad y acceso de la plataforma de monitoreo.
+\begin{itemize}
+	\item Plan de mitigación: 
+        \begin{itemize}
+	       \item Realizar una revisión exhaustiva de la configuración de seguridad y acceso de la plataforma, siguiendo las mejores prácticas y estándares de seguridad. 
+	       \item Realizar pruebas de penetración y auditorías regulares para identificar posibles vulnerabilidades. 
+	       \item Establecer un proceso de revisión y aprobación para los cambios en la configuración de seguridad.
+        \end{itemize}
+	\item Severidad (S*): 6 (sin cambios).
+	\item Ocurrencia (O*): 5 (reducida), considerando las medidas de mitigación implementadas.
+\end{itemize}
 
-\end{consigna}
-
+Riesgo 6: Cambios en los requerimientos del cliente.
+\begin{itemize}
+	\item Plan de mitigación: 
+        \begin{itemize}
+	       \item Establecer un proceso formal de gestión de cambios que incluya la evaluación de impacto, el seguimiento de solicitudes y la comunicación efectiva con el cliente. 
+	       \item Realizar reuniones regulares con el cliente para revisar y validar los requerimientos. 
+	       \item  Mantener una documentación clara y actualizada de los requerimientos acordados.
+        \end{itemize}
+	\item Severidad (S*): 7 (sin cambios).
+	\item Ocurrencia (O*): 4 (reducida), considerando las medidas de mitigación implementadas.
+\end{itemize}
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
-
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\item Req \#1.4: lectura de las mediciones de CO$_2$ de dos sensores MH-Z19B (correspondientes a la entrada y salida de aire) empleando la UART.
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item Verificación: 
+        \begin{itemize}
+	   \item Ejecutar la lógica de lectura de los datos de los sensores y mostrar los resultados en un terminal serie o display LCD.
+	   \item Verificar que los valores leídos no sean nulos y que corresponden a mediciones tabuladas de acuerdo con el ambiente donde se llevan a cabo las pruebas. Por ejemplo, un valor de referencia para el exterior ronda los 400 ppm y se debe verificar niveles similares de CO$_2$ durante las pruebas.
+\end{itemize}
+	\item Validación: 
+        \begin{itemize}
+	   \item Mostrar las mediciones de CO$_2$ de ambos sensores en el display LCD y contrastar las mediciones contra las de un sensor de CO$_2$ calibrado.
+	   \item Obtener la aprobación del cliente de que las mediciones de CO$_2$ son precisas y confiables.
+\end{itemize}
+\end{itemize}
 \end{itemize}
 
+\begin{itemize} 
+\item Req \#3.1: envío y recepción de datos mediante el protocolo MQTT, utilizando certificados SSL/TLS para la comunicación con el broker.
+
+\begin{itemize}
+	\item Verificación:  
+        \begin{itemize}
+	   \item Realizar pruebas de conexión con el broker MQTT y verificar que se establezca una comunicación segura.
+	   \item Hacer pruebas de envío de datos desde el nodo de medición monitoreando en tiempo real los datos enviados y confirmar mediante el servidor de E/S de la aplicación de monitoreo que se reciben los mismos datos.
+    \end{itemize}
+	\item Validación:   
+        \begin{itemize}
+	   \item Realizar pruebas de comunicación con el broker MQTT en presencia del cliente y confirmar que los datos se envíen y reciban correctamente.
+	   \item Obtener la aprobación del cliente de que los datos se visualizan de la manera que se espera en la aplicación de monitoreo.
+\end{itemize}
+\end{itemize}
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+\begin{itemize} 
+\item Req \#3.4: registro de las mediciones obtenidas en una base de datos.
 
-\end{consigna}
+\begin{itemize}
+	\item Verificación:
+            \begin{itemize} 
+            \item Realizar pruebas de escritura en la base de datos y verificar que los datos se guarden correctamente (sin errores registrados en el log de la aplicación de monitoreo).
+            \item Verificar que se pueda acceder a los datos almacenados y que estén completos y consistentes respecto a los datos que se estuvieron enviando.
+            \end{itemize}
+	\item Validación: 
+            \begin{itemize}
+            \item Mostrar los datos almacenados en la aplicación de monitoreo mediante un gráfico de tendencia, haciendo el \textit{retrieval} para diferentes períodos.
+            \item Obtener la aprobación del cliente de que los datos se almacenen correctamente y sean accesibles a través de la interfaz de visualización.
+            \end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#3.7: generación de alarmas cuando se superen los umbrales definidos para las mediciones.
+
+\begin{itemize}
+	\item Verificación: 
+            \begin{itemize}
+            \item Configurar los umbrales de alarma para cada tipo de medición (CO$_2$, temperatura, pH, luz).
+            \item Realizar pruebas simulando mediciones que superen los umbrales establecidos y verificar que se generen las alarmas correspondientes.
+            \item Verificar que las alarmas se registren y se muestren correctamente en la aplicación de monitoreo.
+            \end{itemize}
+	\item Validación: 
+            \begin{itemize}
+            \item Mostrar un panel de alarmas en la aplicación de visualización.
+            \item Efectuar una simulación de todas las fallas para visualizar las alarmas y sus correspondientes descripciones y umbrales.
+            \item Obtener la aprobación del cliente de que las alarmas se generen adecuadamente y cumplan con los requisitos establecidos.
+            \end{itemize}
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#4.1: mostrar las mediciones de los sensores en tiempo real de manera gráfica.
+
+\begin{itemize}
+	\item Verificación: 
+            \begin{itemize}
+            \item Realizar pruebas enviando datos de mediciones a la aplicación y verificar que se muestren correctamente en forma gráfica.
+            \item Verificar que los gráficos se actualicen en tiempo real con los nuevos datos recibidos.
+            \end{itemize}
+	\item Validación: 
+            \begin{itemize}
+            \item Mostrar al cliente la aplicación de monitoreo con las mediciones de los sensores mostradas en tiempo real de manera gráfica.
+            \item Obtener la aprobación del cliente de que las mediciones se visualicen adecuadamente y reflejen el estado actual del sistema.
+            \end{itemize}
+\end{itemize}
+\end{itemize}
+
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
-
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+Las actividades de los procesos de cierre estarán a cargo de la responsable del proyecto, Alena Grebneva.
 
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	\item Se analizará el grado de cumplimiento del plan en la ejecución del proyecto.
+	\item Se detectarán las tareas que no se cumplieron a tiempo y se hará una evaluación de los motivos, con fines de mejora.
+	\item Se identificarán las técnicas y procedimientos que resultaron útiles o inútiles para alcanzar los objetivos del proyecto. 
+	\item Se describirá detalladamente el uso de las distintas herramientas utilizadas y las tecnologías más relevantes en el desarrollo del proyecto.
+	\item Se realizará una presentación formal del proyecto donde con agradecimiento a todas las personas involucradas, miembros del jurado, docentes y autoridades de la CEIoT.
 \end{itemize}
-
-\end{consigna}
-
 
 \end{document}
